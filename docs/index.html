@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sam Shershevsky — AI GTM Systems</title>
+<meta name="description" content="I build agentic AI systems for go-to-market teams: lead enrichment, transparent scoring, and personalized outreach — with humans in the loop.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF7F1; --card:#FFFFFF; --ink:#1C1A17; --muted:#6E675E;
+  --line:#E7DFD2; --accent:#0D6E5F; --accent-deep:#0A574B; --accent-soft:#E3F0EC;
+  --amber:#B45309; --amber-soft:#F7EBD9; --stone:#78716C; --stone-soft:#EFEAE2;
+  --dark:#14110D; --dark-2:#1E1A15;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-0.015em;line-height:1.15}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+section{padding:88px 0}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h2{font-size:clamp(30px,4vw,42px);margin-bottom:12px}
+.lede{color:var(--muted);font-size:18.5px;max-width:640px}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(250,247,241,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:'Fraunces',serif;font-weight:700;font-size:18px;text-decoration:none;color:var(--ink)}
+.brand span{color:var(--accent)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{font-size:14.5px;font-weight:500;color:var(--muted);text-decoration:none}
+.nav-links a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;font-size:15px;padding:12px 24px;border-radius:10px;text-decoration:none;transition:transform .15s ease,background .15s ease;border:none;cursor:pointer}
+.btn:hover{background:var(--accent-deep);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn.ghost:hover{border-color:var(--ink);transform:translateY(-1px)}
+/* hero */
+.hero{padding:110px 0 90px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(42px,6vw,72px);max-width:800px;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--accent-deep)}
+.hero .lede{font-size:20px;max-width:620px;margin-bottom:34px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+.proof{display:flex;gap:0;flex-wrap:wrap;border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden;max-width:760px}
+.proof div{flex:1 1 200px;padding:18px 24px;border-right:1px solid var(--line)}
+.proof div:last-child{border-right:none}
+.proof b{display:block;font-family:'Fraunces',serif;font-size:26px;color:var(--accent-deep)}
+.proof span{font-size:13.5px;color:var(--muted)}
+/* pipeline stages */
+.stages{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:44px}
+.stage{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 18px;position:relative;transition:transform .18s ease,box-shadow .18s ease}
+.stage:hover{transform:translateY(-4px);box-shadow:0 14px 30px -18px rgba(28,26,23,.35)}
+.stage .n{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);font-weight:600;margin-bottom:8px}
+.stage h3{font-size:17px;margin-bottom:8px;font-family:'Inter',sans-serif;font-weight:700;letter-spacing:0}
+.stage p{font-size:13.5px;color:var(--muted);line-height:1.55}
+.stage:not(:last-child)::after{content:'→';position:absolute;right:-16px;top:44%;color:var(--accent);font-weight:700;z-index:2;font-size:15px}
+/* terminal */
+.term{background:var(--dark);border-radius:16px;margin-top:40px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(20,17,13,.5)}
+.term-bar{display:flex;gap:8px;padding:14px 18px;background:var(--dark-2);align-items:center}
+.dot{width:11px;height:11px;border-radius:50%}
+.term-title{margin-left:10px;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#8A8378}
+.term-body{padding:26px 28px;font-family:'JetBrains Mono',monospace;font-size:14px;line-height:1.9;min-height:300px}
+.tl{opacity:0;transform:translateY(4px);transition:opacity .3s ease,transform .3s ease}
+.tl.on{opacity:1;transform:none}
+.t-dim{color:#8A8378}.t-green{color:#5BC8A9}.t-white{color:#EDE8DE}.t-amber{color:#E5A54B}
+/* scorer */
+.scorer{background:var(--card);border:1px solid var(--line);border-radius:18px;margin-top:44px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.scorer-inputs{padding:36px;border-right:1px solid var(--line)}
+.scorer-out{padding:36px;background:#FDFCF9}
+.field{margin-bottom:22px}
+.field label{display:block;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.field select,.field input[type=text]{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:15.5px;font-family:'Inter',sans-serif;background:#fff;color:var(--ink)}
+.field select:focus{outline:none;border-color:var(--accent)}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.range-val{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent-deep);font-weight:600}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.check{display:flex;align-items:center;gap:9px;font-size:14px;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:9px 12px;cursor:pointer;user-select:none}
+.check input{accent-color:var(--accent);width:16px;height:16px}
+.score-num{font-family:'Fraunces',serif;font-size:76px;font-weight:700;line-height:1;color:var(--ink)}
+.tier{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.1em;padding:6px 16px;border-radius:999px;margin:12px 0 20px;text-transform:uppercase}
+.tier.A{background:var(--accent-soft);color:var(--accent-deep)}
+.tier.B{background:var(--amber-soft);color:var(--amber)}
+.tier.C{background:var(--stone-soft);color:var(--stone)}
+.reasons{list-style:none}
+.reasons li{font-size:14px;padding:9px 0;border-bottom:1px dashed var(--line);color:var(--muted)}
+.reasons li b{color:var(--accent-deep);font-family:'JetBrains Mono',monospace;font-weight:600}
+.scorer-note{font-size:12.5px;color:var(--muted);margin-top:18px;font-style:italic}
+/* tables + emails */
+.sample-table{width:100%;border-collapse:collapse;margin-top:36px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:14.5px}
+.sample-table th{text-align:left;padding:14px 18px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);background:#FDFCF9}
+.sample-table td{padding:13px 18px;border-bottom:1px solid var(--line)}
+.sample-table tr:last-child td{border-bottom:none}
+.pill{display:inline-block;min-width:34px;text-align:center;font-weight:700;font-size:12px;padding:4px 10px;border-radius:999px}
+.pill.A{background:var(--accent-soft);color:var(--accent-deep)}
+.pill.B{background:var(--amber-soft);color:var(--amber)}
+.pill.C{background:var(--stone-soft);color:var(--stone)}
+.emails{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+.email{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.email-head{padding:16px 22px;border-bottom:1px solid var(--line);background:#FDFCF9;font-size:13.5px}
+.email-head .subj{font-weight:700;font-size:15px;margin-bottom:4px}
+.email-head .meta{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:12px}
+.email-body{padding:22px;font-size:15px;color:#3A3630}
+.email-body p{margin-bottom:14px}
+.email-sign{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px;margin-top:6px}
+/* principles */
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.prin{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:30px 28px}
+.prin .ico{font-size:26px;margin-bottom:14px}
+.prin h3{font-family:'Inter',sans-serif;font-size:17px;font-weight:700;margin-bottom:10px;letter-spacing:0}
+.prin p{font-size:14.5px;color:var(--muted)}
+/* case study */
+.case{background:var(--dark);border-radius:20px;color:#EDE8DE;padding:60px;margin-top:20px;position:relative;overflow:hidden}
+.case .eyebrow{color:#5BC8A9}
+.case h2{color:#fff;max-width:640px}
+.case p{color:#B9B2A6;max-width:640px;margin-top:12px;font-size:17px}
+.case-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.case-stats div{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:26px}
+.case-stats b{display:block;font-family:'Fraunces',serif;font-size:38px;color:#5BC8A9;font-weight:700}
+.case-stats span{font-size:14px;color:#B9B2A6}
+/* honesty + footer */
+.honest{margin-top:36px;font-size:13.5px;color:var(--muted);border-left:3px solid var(--line);padding-left:18px;max-width:680px}
+footer{border-top:1px solid var(--line);padding:56px 0;text-align:center}
+footer h2{margin-bottom:10px}
+footer .lede{margin:0 auto 28px}
+.foot-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.small{font-size:13px;color:var(--muted);margin-top:28px}
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+@media(max-width:900px){
+  .stages{grid-template-columns:1fr 1fr}
+  .stage:not(:last-child)::after{display:none}
+  .scorer{grid-template-columns:1fr}
+  .scorer-inputs{border-right:none;border-bottom:1px solid var(--line)}
+  .emails{grid-template-columns:1fr}
+  .principles{grid-template-columns:1fr}
+  .case-stats{grid-template-columns:1fr}
+  .case{padding:40px 28px}
+  section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-in">
+  <a class="brand" href="#">Sam Shershevsky <span>·</span> AI GTM Systems</a>
+  <div class="nav-links">
+    <a href="#pipeline">Pipeline</a><a href="#scorer">Live scorer</a><a href="#output">Output</a><a href="#story">Story</a>
+    <a class="btn" style="padding:9px 18px;font-size:14px" href="https://github.com/samshershevsky/ai-outreach-pipeline" target="_blank" rel="noopener">Code ↗</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <h1 class="rv">I build AI systems that <em>do the busywork.</em></h1>
+  <p class="lede rv">GTM engineer &amp; AI transformation. I design agentic pipelines for prospecting, enrichment, and outreach — explainable, human-in-the-loop, and already running in production.</p>
+  <div class="cta-row rv">
+    <a class="btn" href="#scorer">Try the live lead scorer ↓</a>
+    <a class="btn ghost" href="https://github.com/samshershevsky/ai-outreach-pipeline" target="_blank" rel="noopener">Read the code ↗</a>
+  </div>
+  <div class="proof rv">
+    <div><b>12-agent</b><span>AI system live in production (Claude Enterprise + Apollo + HubSpot + Gmail)</span></div>
+    <div><b>−50%</b><span>manual prospecting work after a 30-day ramp</span></div>
+    <div><b>#1 · 165%</b><span>on the team — quota attainment, current role</span></div>
+  </div>
+</div></header>
+
+<section id="pipeline"><div class="wrap">
+  <div class="eyebrow rv">The demo</div>
+  <h2 class="rv">Leads in. Drafts out. Nothing sent without a human.</h2>
+  <p class="lede rv">A working, end-to-end outreach pipeline. A CSV of leads goes in — enrichment, transparent scoring, and signal-aware outreach drafts come out. It stops at drafts on purpose: approve-and-send is a feature, not a missing piece.</p>
+  <div class="stages">
+    <div class="stage rv"><div class="n">01</div><h3>Ingest &amp; validate</h3><p>25 leads loaded from CSV, deduped and normalized.</p></div>
+    <div class="stage rv"><div class="n">02</div><h3>Enrich</h3><p>Headcount, tech stack, hiring &amp; intent signals. Simulated here — real APIs in production.</p></div>
+    <div class="stage rv"><div class="n">03</div><h3>Score</h3><p>0–100 ICP fit, tiers A/B/C. Every point has a reason string — fully auditable.</p></div>
+    <div class="stage rv"><div class="n">04</div><h3>Draft</h3><p>Personalized openers keyed to each lead's signals. Template engine, or Claude via API.</p></div>
+    <div class="stage rv"><div class="n">05</div><h3>Report</h3><p>Tier distribution, ranked leads, scoring reasons, all drafts — ready for review.</p></div>
+  </div>
+  <div class="term rv" id="term">
+    <div class="term-bar"><span class="dot" style="background:#E0604F"></span><span class="dot" style="background:#E5A54B"></span><span class="dot" style="background:#5BC8A9"></span><span class="term-title">sam — bash demo/run.sh</span></div>
+    <div class="term-body" id="term-body"></div>
+  </div>
+</div></section>
+
+<section id="scorer" style="padding-top:20px"><div class="wrap">
+  <div class="eyebrow rv">Interactive</div>
+  <h2 class="rv">Score a lead yourself.</h2>
+  <p class="lede rv">This is the exact rubric from the pipeline — same code, same weights, running in your browser. Change the inputs and watch the score, tier, and every reason update.</p>
+  <div class="scorer rv">
+    <div class="scorer-inputs">
+      <div class="field"><label>Job title</label>
+        <select id="in-title">
+          <option>Chief Revenue Officer</option><option>Chief Executive Officer</option>
+          <option>Founder</option><option>Owner</option><option>President</option>
+          <option>VP of Sales</option><option>Director of Revenue</option>
+          <option>Head of Growth</option><option>Head of Sales</option>
+          <option>Sales Manager</option><option>Sales Development Rep</option>
+        </select></div>
+      <div class="field"><label>Company size — <span class="range-val" id="emp-val">600 employees</span></label>
+        <input type="range" id="in-emp" min="10" max="6000" step="10" value="600"></div>
+      <div class="field"><label>Industry</label>
+        <select id="in-ind">
+          <option>SaaS</option><option>Fintech</option><option>Healthcare</option><option>Analytics</option><option>Edtech</option>
+          <option>Manufacturing</option><option>Wholesale</option><option>Consulting</option><option>Fitness</option><option>Logistics</option>
+        </select></div>
+      <div class="field"><label>Hiring signals (first 3 count)</label>
+        <div class="checks" id="in-sigs">
+          <label class="check"><input type="checkbox" checked> hiring SDRs</label>
+          <label class="check"><input type="checkbox" checked> hiring AEs</label>
+          <label class="check"><input type="checkbox"> hiring a sales manager</label>
+          <label class="check"><input type="checkbox"> hiring revenue operations</label>
+          <label class="check"><input type="checkbox"> migrating to HubSpot</label>
+          <label class="check"><input type="checkbox"> opened a second office</label>
+        </div></div>
+      <div class="field"><label class="check" style="display:flex"><input type="checkbox" id="in-pain" checked style="width:16px;height:16px;accent-color:var(--accent)"> <span style="text-transform:none;letter-spacing:0;font-size:14px">Pain signal detected in research (manual process)</span></label></div>
+    </div>
+    <div class="scorer-out">
+      <div class="eyebrow">Live score</div>
+      <div class="score-num" id="out-score">84</div>
+      <div><span class="tier A" id="out-tier">Tier A — reach out</span></div>
+      <ul class="reasons" id="out-reasons"></ul>
+      <p class="scorer-note">Same rubric as <span style="font-family:'JetBrains Mono',monospace">demo/scoring.py</span> — title seniority, size sweet spot, industry fit, up to 3 hiring signals, pain bonus. Capped at 100.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="output" style="padding-top:20px"><div class="wrap">
+  <div class="eyebrow rv">Real output</div>
+  <h2 class="rv">What the pipeline actually produced.</h2>
+  <p class="lede rv">Straight from the last run — 25 synthetic leads scored and ranked, then drafted. These are the top of the pile.</p>
+  <table class="sample-table rv">
+    <thead><tr><th>Score</th><th>Tier</th><th>Name</th><th>Title</th><th>Company</th></tr></thead>
+    <tbody>
+      <tr><td><b>84</b></td><td><span class="pill A">A</span></td><td>Sofia Marino</td><td>Chief Revenue Officer</td><td>Driftline</td></tr>
+      <tr><td><b>80</b></td><td><span class="pill A">A</span></td><td>Robert Hayes</td><td>Owner</td><td>Ferrostack Supply</td></tr>
+      <tr><td><b>77</b></td><td><span class="pill A">A</span></td><td>Chris Novak</td><td>Founder</td><td>Novak Fitness Systems</td></tr>
+      <tr><td><b>77</b></td><td><span class="pill A">A</span></td><td>Sam Whitfield</td><td>President</td><td>Whitfield Industrial</td></tr>
+      <tr><td><b>74</b></td><td><span class="pill B">B</span></td><td>David Okafor</td><td>Director of Revenue</td><td>Quantia Health</td></tr>
+      <tr><td><b>74</b></td><td><span class="pill B">B</span></td><td>Priya Nair</td><td>Head of Growth</td><td>Vantagewell</td></tr>
+      <tr><td><b>74</b></td><td><span class="pill B">B</span></td><td>Daniel Kim</td><td>Head of Revenue</td><td>Cloudhaven</td></tr>
+      <tr><td><b>74</b></td><td><span class="pill B">B</span></td><td>Grace O'Malley</td><td>Head of Sales</td><td>Datawise</td></tr>
+    </tbody>
+  </table>
+  <div class="emails">
+    <div class="email rv">
+      <div class="email-head"><div class="subj">David — Migrating to HubSpot this quarter</div><div class="meta">To: david.okafor@quantiahealth.com · score 74, tier B</div></div>
+      <div class="email-body">
+        <p>Hi David,</p>
+        <p>Saw Quantia Health is migrating to HubSpot this quarter — migrations are exactly when teams rethink the manual workarounds they've been tolerating.</p>
+        <p>I help revenue leaders replace the manual prospecting busywork with AI-assisted workflows — most teams get about half that time back.</p>
+        <p>Worth a quick look at what that could look like for Quantia Health?</p>
+        <p>Best,<br>Sam Shershevsky</p>
+        <div class="email-sign">DRAFT — written by the pipeline, sent by no one. Human review required.</div>
+      </div>
+    </div>
+    <div class="email rv">
+      <div class="email-head"><div class="subj">Priya — Just opened a second office</div><div class="meta">To: priya.nair@vantagewell.com · score 74, tier B</div></div>
+      <div class="email-body">
+        <p>Hi Priya,</p>
+        <p>Saw that Vantagewell is hiring a sales manager — usually a sign the team is about to feel the pain of manual prospecting.</p>
+        <p>I help revenue leaders replace the manual prospecting busywork with AI-assisted workflows — most teams get about half that time back.</p>
+        <p>Worth a quick look at what that could look like for Vantagewell?</p>
+        <p>Best,<br>Sam Shershevsky</p>
+        <div class="email-sign">DRAFT — written by the pipeline, sent by no one. Human review required.</div>
+      </div>
+    </div>
+  </div>
+  <p class="honest rv">Honest framing: the 25 leads are synthetic (fictional people and companies), and enrichment is a deterministic simulation. In production, stages 2 and 4 call real APIs. The architecture, scoring rubric, and prompt design are the real thing — that's what this page is showing.</p>
+</div></section>
+
+<section id="story" style="padding-top:20px"><div class="wrap">
+  <div class="case rv">
+    <div class="eyebrow">Production story</div>
+    <h2>Not a toy project — this thinking already runs a sales org.</h2>
+    <p>At my current role I built a 12-agent AI system on Claude Enterprise, wired into Apollo, HubSpot, Gmail, and Calendar via MCP — prospecting, lead scoring, CRM hygiene, and outreach drafting. The demo above is the portable version of how I think.</p>
+    <div class="case-stats">
+      <div><b>−50%</b><span>manual prospecting &amp; CRM work</span></div>
+      <div><b>150%</b><span>of monthly target after a 30-day ramp</span></div>
+      <div><b>$1.5M+</b><span>closed selling Oracle cloud solutions</span></div>
+    </div>
+  </div>
+  <div class="principles">
+    <div class="prin rv"><div class="ico">🔍</div><h3>Explainable scoring</h3><p>Every point has a reason string. A human or a reviewer agent can audit why a lead is Tier A. Black-box scores don't survive contact with a sales team.</p></div>
+    <div class="prin rv"><div class="ico">📝</div><h3>Prompts as code review</h3><p>Outreach prompts live in versioned files, not buried in logic — reviewable, diffable, improvable like any other code.</p></div>
+    <div class="prin rv"><div class="ico">🤝</div><h3>Human-in-the-loop</h3><p>The pipeline ends at drafts, not sends. Approval gates are a design choice: AI does the research and writing, humans make the calls.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <h2 class="rv">Let's talk about what AI can do for your pipeline.</h2>
+  <p class="lede rv">Open to GTM engineer and AI transformation roles — remote US, or hybrid in Miami / Fort Lauderdale / Boca.</p>
+  <div class="foot-links rv">
+    <a class="btn" href="https://github.com/samshershevsky/ai-outreach-pipeline" target="_blank" rel="noopener">GitHub ↗</a>
+    <a class="btn ghost" href="https://linkedin.com/in/samshershevsky" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="btn ghost" href="mailto:samshev13@gmail.com">samshev13@gmail.com</a>
+  </div>
+  <p class="small">Built by Sam Shershevsky · Demo runs on synthetic data · The thinking is real.</p>
+</div></footer>
+<script>
+// ---------- scroll reveal ----------
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), {threshold: 0.12});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// ---------- terminal: real output from bash demo/run.sh ----------
+const termLines = [
+  ['t-dim',  '$ bash demo/run.sh'],
+  ['t-white','[1/5] Ingest & validate…'],
+  ['t-dim',  '      25 synthetic leads loaded from data/leads.csv'],
+  ['t-white','[2/5] Enrich (SIMULATED)…'],
+  ['t-white','[3/5] Score…'],
+  ['t-green','      scored 25 leads → A:4 B:14 C:7'],
+  ['t-white','[4/5] Draft personalized outreach…'],
+  ['t-dim',  '      25 drafts written (approve-and-send: nothing sent)'],
+  ['t-white','[5/5] Write report…'],
+  ['t-dim',  '      → output/report.md, scored_leads.csv, outreach_emails.md'],
+  ['t-amber','Done.'],
+];
+const termBody = document.getElementById('term-body');
+let termStarted = false;
+new IntersectionObserver((es, obs) => {
+  if (es[0].isIntersecting && !termStarted) {
+    termStarted = true; obs.disconnect();
+    let i = 0;
+    const tick = () => {
+      if (i >= termLines.length) return;
+      const [cls, txt] = termLines[i++];
+      const div = document.createElement('div');
+      div.className = 'tl ' + cls; div.textContent = txt;
+      termBody.appendChild(div);
+      requestAnimationFrame(() => div.classList.add('on'));
+      setTimeout(tick, i === 1 ? 500 : 260);
+    };
+    tick();
+  }
+}, {threshold: 0.3}).observe(document.getElementById('term'));
+
+// ---------- interactive scorer: exact mirror of demo/scoring.py ----------
+const HIGH_FIT = new Set(['SaaS','Fintech','Healthcare','Analytics','Edtech']);
+const TITLE_TIERS = [
+  [['chief','cfo','cro','ceo','president','founder','owner'], 30],
+  [['vp','vice president'], 25],
+  [['director','head of'], 20],
+  [['manager'], 10],
+];
+function titlePoints(title) {
+  const t = title.toLowerCase();
+  for (const [kws, pts] of TITLE_TIERS)
+    if (kws.some(k => t.includes(k))) return [pts, `Title seniority '${title}': +${pts}`];
+  return [5, `Title '${title}': +5 (individual contributor)`];
+}
+function score() {
+  const title = document.getElementById('in-title').value;
+  const emp = +document.getElementById('in-emp').value;
+  const ind = document.getElementById('in-ind').value;
+  const sigs = [...document.querySelectorAll('#in-sigs input:checked')].map(c => c.parentElement.textContent.trim());
+  const pain = document.getElementById('in-pain').checked;
+  let s = 0; const reasons = [];
+  const [tp, why] = titlePoints(title); s += tp; reasons.push([why, tp]);
+  if (emp >= 50 && emp <= 1000)      { s += 25; reasons.push([`Company size ~${emp.toLocaleString()} employees (sweet spot): +25`, 25]); }
+  else if (emp > 1000 && emp <= 5000){ s += 10; reasons.push([`Company size ~${emp.toLocaleString()} employees: +10`, 10]); }
+  else                              { s += 5;  reasons.push([`Company size ~${emp.toLocaleString()} employees (outside sweet spot): +5`, 5]); }
+  if (HIGH_FIT.has(ind)) { s += 15; reasons.push([`Industry '${ind}' is high-fit: +15`, 15]); }
+  else                   { s += 8;  reasons.push([`Industry '${ind}': +8`, 8]); }
+  sigs.slice(0, 3).forEach(sig => { s += 7; reasons.push([`Buying signal — ${sig}: +7`, 7]); });
+  if (pain) { s += 10; reasons.push(['Pain signal in research (manual process): +10', 10]); }
+  s = Math.min(s, 100);
+  const tier = s >= 75 ? 'A' : s >= 55 ? 'B' : 'C';
+  document.getElementById('out-score').textContent = s;
+  const tierEl = document.getElementById('out-tier');
+  tierEl.className = 'tier ' + tier;
+  tierEl.textContent = tier === 'A' ? 'Tier A — reach out' : tier === 'B' ? 'Tier B — nurture' : 'Tier C — deprioritize';
+  document.getElementById('out-reasons').innerHTML =
+    reasons.map(([r, p]) => `<li>${r.replace(/\+\d+$/, m => `<b>${m}</b>`)}</li>`).join('');
+  document.getElementById('emp-val').textContent = emp.toLocaleString() + ' employees';
+}
+['in-title','in-emp','in-ind','in-pain'].forEach(id =>
+  document.getElementById(id).addEventListener('input', score));
+document.querySelectorAll('#in-sigs input').forEach(c => c.addEventListener('change', score));
+score();
+</script>
+</body>
+</html>
