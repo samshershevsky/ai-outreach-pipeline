@@ -1,5 +1,7 @@
 # AI Outreach Pipeline — Portfolio Demo
 
+> **Live site:** https://samshershevsky.github.io/ai-outreach-pipeline/ — interactive demo with a working lead scorer you can try in the browser.
+
 **What this is:** a working, end-to-end AI outreach pipeline I designed and built.
 A CSV of leads goes in — enrichment, scoring, and personalized outreach drafts come out.
 Built to demonstrate how I think about agentic AI systems: staged, explainable,
