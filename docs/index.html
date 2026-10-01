@@ -38,6 +38,10 @@ nav{position:sticky;top:0;z-index:50;background:rgba(250,247,241,0.92);backdrop-
 .btn.ghost:hover{border-color:var(--ink);transform:translateY(-1px)}
 /* hero */
 .hero{padding:110px 0 90px;position:relative;overflow:hidden}
+.hero-grid{display:flex;align-items:center;gap:60px}
+.hero-copy{flex:1;min-width:0}
+.portrait{flex:0 0 auto}
+.portrait img{width:210px;height:210px;border-radius:50%;object-fit:cover;border:6px solid #fff;box-shadow:0 24px 50px -22px rgba(28,26,23,.45);outline:1.5px solid var(--line);display:block}
 .hero h1{font-size:clamp(42px,6vw,72px);max-width:800px;margin-bottom:20px}
 .hero h1 em{font-style:italic;color:var(--accent-deep)}
 .hero .lede{font-size:20px;max-width:620px;margin-bottom:34px}
@@ -133,6 +137,10 @@ footer .lede{margin:0 auto 28px}
   .stage:not(:last-child)::after{display:none}
   .scorer{grid-template-columns:1fr}
   .scorer-inputs{border-right:none;border-bottom:1px solid var(--line)}
+  .hero-grid{flex-direction:column;gap:36px;text-align:center}
+  .hero .lede{margin-left:auto;margin-right:auto}
+  .cta-row{justify-content:center}
+  .portrait img{width:150px;height:150px}
   .emails{grid-template-columns:1fr}
   .principles{grid-template-columns:1fr}
   .case-stats{grid-template-columns:1fr}
@@ -150,7 +158,8 @@ footer .lede{margin:0 auto 28px}
   </div>
 </div></nav>
 
-<header class="hero"><div class="wrap">
+<header class="hero"><div class="wrap hero-grid">
+  <div class="hero-copy">
   <h1 class="rv">I build AI systems that <em>do the busywork.</em></h1>
   <p class="lede rv">GTM engineer &amp; AI transformation. I design agentic pipelines for prospecting, enrichment, and outreach — explainable, human-in-the-loop, and already running in production.</p>
   <div class="cta-row rv">
@@ -162,6 +171,8 @@ footer .lede{margin:0 auto 28px}
     <div><b>−50%</b><span>manual prospecting work after a 30-day ramp</span></div>
     <div><b>#1 · 165%</b><span>on the team — quota attainment, current role</span></div>
   </div>
+  </div>
+  <div class="portrait rv"><img src="profile.jpg" alt="Sam Shershevsky"></div>
 </div></header>
 
 <section id="pipeline"><div class="wrap">
