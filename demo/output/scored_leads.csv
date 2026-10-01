@@ -1,0 +1,26 @@
+lead_id,name,title,company,score,tier,employee_estimate,funding_stage,tech_stack
+L001,Maya Chen,VP Sales,Brightpath Logistics,52,C,28,Series C,HubSpot;Apollo
+L002,David Okafor,Director of Revenue,Quantia Health,74,B,80,Series A,HubSpot;Pipedrive
+L003,Priya Nair,Head of Growth,Vantagewell,74,B,140,Seed,HubSpot;Apollo
+L004,Tom Becker,Sales Manager,Copperline Manufacturing,67,B,220,Series C,Zoho CRM;ActiveCampaign
+L005,Sofia Marino,Chief Revenue Officer,Driftline,84,A,600,Public,Pipedrive;Mailchimp
+L006,James Park,VP Business Development,Harborlane,52,C,28,Series C,Zoho CRM;ActiveCampaign
+L007,Aisha Khan,Director of Sales,Lumenfield Energy,40,C,12,Series B,HubSpot;Salesforce
+L008,Robert Hayes,Owner,Ferrostack Supply,80,A,600,Series B,Zoho CRM;ActiveCampaign
+L009,Elena Petrova,Head of Partnerships,Beaconloop,67,B,350,Series A,Salesforce;Gong
+L010,Marcus Webb,VP Growth,Cardinal Analytics,64,B,4500,Series A,Spreadsheets;Gmail
+L011,Jennifer Liu,Director of Marketing,Bluepeak Foods,67,B,600,Series B,HubSpot;Apollo
+L012,Ahmed Hassan,CEO,Medsupply Direct,57,B,45,Seed,Pipedrive;Mailchimp
+L013,Rachel Green,VP Sales,Ironpeak Construction,52,C,12,Private equity,Zoho CRM;ActiveCampaign
+L014,Daniel Kim,Head of Revenue,Cloudhaven,74,B,140,Bootstrapped,HubSpot;Outreach
+L015,Olivia Bennett,Sales Director,Sterling Legal Group,47,C,28,Series A,Salesforce;Gong
+L016,Chris Novak,Founder,Novak Fitness Systems,77,A,80,Seed,HubSpot;Apollo
+L017,Fatima Al-Sayed,VP Operations,Gulfstream Marine,60,B,1200,Series B,Pipedrive;Mailchimp
+L018,Kevin Doyle,Director of Business Development,Apex Insurance Brokers,67,B,140,Series C,Salesforce;Salesloft;6sense
+L019,Nina Rodriguez,CMO,Bloombox Retail,25,C,45,Series B,Pipedrive;Mailchimp
+L020,Sam Whitfield,President,Whitfield Industrial,77,A,140,Series A,HubSpot;Outreach
+L021,Grace O'Malley,Head of Sales,Datawise,74,B,220,Series B,Spreadsheets;Gmail
+L022,Victor Cruz,VP Commercial,Sunbelt Solar,50,C,4500,Seed,Zoho CRM;ActiveCampaign
+L023,Hannah Weiss,Director of Partnerships,Educore Learning,59,B,4500,Series A,HubSpot;Salesforce
+L024,Brian Foster,Owner,Foster & Associates,72,B,1200,Seed,Salesforce;Gong
+L025,Diana Ross,Chief Growth Officer,Threadline Apparel,60,B,12,Series C,HubSpot;Outreach

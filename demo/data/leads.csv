@@ -1,0 +1,29 @@
+# SYNTHETIC DATA — DEMO ONLY
+# Every person, company, and detail below is fictional and generated for demonstration purposes.
+# No real individuals or businesses are represented.
+lead_id,first_name,last_name,title,company,industry,website,city,state,hook
+L001,Maya,Chen,VP Sales,Brightpath Logistics,Logistics,brightpathlogistics.com,Austin,TX,Hiring 3 AEs according to recent job posts
+L002,David,Okafor,Director of Revenue,Quantia Health,Healthcare,quantiahealth.com,Boston,MA,Migrating to HubSpot this quarter
+L003,Priya,Nair,Head of Growth,Vantagewell,Fintech,vantagewell.com,New York,NY,Just opened a second office
+L004,Tom,Becker,Sales Manager,Copperline Manufacturing,Manufacturing,copperlinemfg.com,Chicago,IL,Still tracking pipeline in spreadsheets
+L005,Sofia,Marino,Chief Revenue Officer,Driftline,SaaS,driftline.io,San Francisco,CA,Series B announced last month
+L006,James,Park,VP Business Development,Harborlane,Real Estate,harborlane.com,Miami,FL,Expanding into 3 new markets
+L007,Aisha,Khan,Director of Sales,Lumenfield Energy,Energy,lumenfieldenergy.com,Houston,TX,New CRO started in June
+L008,Robert,Hayes,Owner,Ferrostack Supply,Wholesale,ferrostacksupply.com,Atlanta,GA,No CRM - runs the business on email and memory
+L009,Elena,Petrova,Head of Partnerships,Beaconloop,SaaS,beaconloop.com,Denver,CO,Partner program launching in Q4
+L010,Marcus,Webb,VP Growth,Cardinal Analytics,Analytics,cardinalanalytics.io,Seattle,WA,Hiring their first SDR team
+L011,Jennifer,Liu,Director of Marketing,Bluepeak Foods,Food & Beverage,bluepeakfoods.com,Los Angeles,CA,Launching a DTC channel
+L012,Ahmed,Hassan,CEO,Medsupply Direct,Healthcare,medsupplydirect.com,Dallas,TX,30-person team with founder-led sales
+L013,Rachel,Green,VP Sales,Ironpeak Construction,Construction,ironpeakconstruction.com,Phoenix,AZ,Won two municipal contracts this year
+L014,Daniel,Kim,Head of Revenue,Cloudhaven,SaaS,cloudhaven.io,Salt Lake City,UT,Free trial signups up 40 percent
+L015,Olivia,Bennett,Sales Director,Sterling Legal Group,Legal,sterlinglegal.com,Fort Lauderdale,FL,Opening a second practice area
+L016,Chris,Novak,Founder,Novak Fitness Systems,Fitness,novakfitness.com,Nashville,TN,Franchising - 5 new locations planned
+L017,Fatima,Al-Sayed,VP Operations,Gulfstream Marine,Marine,gulfstreammarine.co,Tampa,FL,Still qualifying inbound leads manually
+L018,Kevin,Doyle,Director of Business Development,Apex Insurance Brokers,Insurance,apexbrokers.com,Charlotte,NC,Acquired a smaller agency in May
+L019,Nina,Rodriguez,CMO,Bloombox Retail,Retail,bloomboxretail.com,Indianapolis,IN,E-commerce relaunch planned for October
+L020,Sam,Whitfield,President,Whitfield Industrial,Manufacturing,whitfieldindustrial.com,Milwaukee,WI,Family business - second generation taking over
+L021,Grace,O'Malley,Head of Sales,Datawise,SaaS,datawise.ai,Boston,MA,Just hired their first sales ops manager
+L022,Victor,Cruz,VP Commercial,Sunbelt Solar,Energy,sunbeltsolar.com,Orlando,FL,Residential division growing fast
+L023,Hannah,Weiss,Director of Partnerships,Educore Learning,Edtech,educorelearning.com,Philadelphia,PA,Piloting with 3 school districts
+L024,Brian,Foster,Owner,Foster & Associates,Consulting,fosterassociates.com,Kansas City,MO,Referral-only pipeline is drying up
+L025,Diana,Ross,Chief Growth Officer,Threadline Apparel,Apparel,threadlineapparel.com,Portland,OR,Wholesale accounts stalling
