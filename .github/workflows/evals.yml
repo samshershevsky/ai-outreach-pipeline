@@ -1,0 +1,27 @@
+name: evals
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  evals:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run pipeline smoke test
+        run: bash demo/run.sh
+
+      - name: Run evals
+        run: python3 evals/run_evals.py
+
+      - name: MCP server smoke test
+        run: |
+          printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"ci","version":"1.0"}}}' '{"jsonrpc":"2.0","method":"notifications/initialized"}' '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' | python3 mcp-server/server.py | grep -q "enrich_lead"
