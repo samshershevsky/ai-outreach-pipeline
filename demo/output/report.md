@@ -1,7 +1,7 @@
-# Outreach pipeline — run report
+# Outreach pipeline, run report
 
-Date: 2026-10-01
-Leads processed: 25 (synthetic data — all fictional)
+Date: 2026-10-26
+Leads processed: 25 (synthetic data, all fictional)
 Minimum score filter: 0
 
 ## Honesty notes
@@ -32,75 +32,75 @@ Minimum score filter: 0
 
 ## Per-lead scoring reasons (top 10)
 
-### Sofia Marino — Driftline (84, tier A)
+### Sofia Marino, Driftline (84, tier A)
 - Title seniority 'Chief Revenue Officer': +30
 - Company size ~600 employees (sweet spot): +25
 - Industry 'SaaS' is high-fit: +15
-- Buying signal — hiring a sales manager: +7
-- Buying signal — hiring account executives: +7
+- Buying signal, hiring a sales manager: +7
+- Buying signal, hiring account executives: +7
 
-### Robert Hayes — Ferrostack Supply (80, tier A)
+### Robert Hayes, Ferrostack Supply (80, tier A)
 - Title seniority 'Owner': +30
 - Company size ~600 employees (sweet spot): +25
 - Industry 'Wholesale': +8
-- Buying signal — hiring SDRs: +7
+- Buying signal, hiring SDRs: +7
 - Pain signal in research (manual process): +10
 
-### Chris Novak — Novak Fitness Systems (77, tier A)
+### Chris Novak, Novak Fitness Systems (77, tier A)
 - Title seniority 'Founder': +30
 - Company size ~80 employees (sweet spot): +25
 - Industry 'Fitness': +8
-- Buying signal — hiring revenue operations: +7
-- Buying signal — hiring SDRs: +7
+- Buying signal, hiring revenue operations: +7
+- Buying signal, hiring SDRs: +7
 
-### Sam Whitfield — Whitfield Industrial (77, tier A)
+### Sam Whitfield, Whitfield Industrial (77, tier A)
 - Title seniority 'President': +30
 - Company size ~140 employees (sweet spot): +25
 - Industry 'Manufacturing': +8
-- Buying signal — hiring a sales manager: +7
-- Buying signal — hiring revenue operations: +7
+- Buying signal, hiring a sales manager: +7
+- Buying signal, hiring revenue operations: +7
 
-### David Okafor — Quantia Health (74, tier B)
+### David Okafor, Quantia Health (74, tier B)
 - Title seniority 'Director of Revenue': +20
 - Company size ~80 employees (sweet spot): +25
 - Industry 'Healthcare' is high-fit: +15
-- Buying signal — hiring SDRs: +7
-- Buying signal — hiring revenue operations: +7
+- Buying signal, hiring SDRs: +7
+- Buying signal, hiring revenue operations: +7
 
-### Priya Nair — Vantagewell (74, tier B)
+### Priya Nair, Vantagewell (74, tier B)
 - Title seniority 'Head of Growth': +20
 - Company size ~140 employees (sweet spot): +25
 - Industry 'Fintech' is high-fit: +15
-- Buying signal — hiring a sales manager: +7
-- Buying signal — hiring revenue operations: +7
+- Buying signal, hiring a sales manager: +7
+- Buying signal, hiring revenue operations: +7
 
-### Daniel Kim — Cloudhaven (74, tier B)
+### Daniel Kim, Cloudhaven (74, tier B)
 - Title seniority 'Head of Revenue': +20
 - Company size ~140 employees (sweet spot): +25
 - Industry 'SaaS' is high-fit: +15
-- Buying signal — hiring SDRs: +7
-- Buying signal — hiring revenue operations: +7
+- Buying signal, hiring SDRs: +7
+- Buying signal, hiring revenue operations: +7
 
-### Grace O'Malley — Datawise (74, tier B)
+### Grace O'Malley, Datawise (74, tier B)
 - Title seniority 'Head of Sales': +20
 - Company size ~220 employees (sweet spot): +25
 - Industry 'SaaS' is high-fit: +15
-- Buying signal — hiring revenue operations: +7
-- Buying signal — hiring a sales manager: +7
+- Buying signal, hiring revenue operations: +7
+- Buying signal, hiring a sales manager: +7
 
-### Brian Foster — Foster & Associates (72, tier B)
+### Brian Foster, Foster & Associates (72, tier B)
 - Title seniority 'Owner': +30
 - Company size ~1200 employees: +10
 - Industry 'Consulting': +8
-- Buying signal — hiring account executives: +7
-- Buying signal — hiring revenue operations: +7
+- Buying signal, hiring account executives: +7
+- Buying signal, hiring revenue operations: +7
 - Pain signal in research (manual process): +10
 
-### Tom Becker — Copperline Manufacturing (67, tier B)
+### Tom Becker, Copperline Manufacturing (67, tier B)
 - Title seniority 'Sales Manager': +10
 - Company size ~220 employees (sweet spot): +25
 - Industry 'Manufacturing': +8
-- Buying signal — hiring SDRs: +7
-- Buying signal — hiring a sales manager: +7
+- Buying signal, hiring SDRs: +7
+- Buying signal, hiring a sales manager: +7
 - Pain signal in research (manual process): +10
 

@@ -1,4 +1,4 @@
-"""Stage 3 — Lead scoring.
+"""Stage 3, Lead scoring.
 
 Encodes the ICP fit rubric from prompts.py into a transparent 0-100 score.
 Every point is explainable: score_lead() returns the score, the tier, and the
@@ -52,7 +52,7 @@ def score_lead(lead: dict, enrichment: dict) -> dict:
 
     for sig in enrichment["hiring_signals"][:3]:
         score += 7
-        reasons.append(f"Buying signal — {sig}: +7")
+        reasons.append(f"Buying signal, {sig}: +7")
 
     if enrichment["pain_detected"]:
         score += 10
