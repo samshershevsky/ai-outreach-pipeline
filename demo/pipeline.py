@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""AI outreach pipeline demo — synthetic data, end to end, one command.
+"""AI outreach pipeline demo, synthetic data, end to end, one command.
 
     python3 pipeline.py
     python3 pipeline.py --min-score 55 --out demo/output
@@ -42,10 +42,10 @@ def write_report(out_dir: str, results: list[dict], min_score: int) -> None:
     tiers = Counter(r["score"]["tier"] for r in results)
     top = sorted(results, key=lambda r: r["score"]["score"], reverse=True)[:10]
     lines = [
-        "# Outreach pipeline — run report",
+        "# Outreach pipeline, run report",
         "",
         f"Date: {date.today().isoformat()}",
-        f"Leads processed: {len(results)} (synthetic data — all fictional)",
+        f"Leads processed: {len(results)} (synthetic data, all fictional)",
         f"Minimum score filter: {min_score}",
         "",
         "## Honesty notes",
@@ -68,7 +68,7 @@ def write_report(out_dir: str, results: list[dict], min_score: int) -> None:
     lines += ["", "## Per-lead scoring reasons (top 10)", ""]
     for r in top:
         l, s = r["lead"], r["score"]
-        lines.append(f"### {l['first_name']} {l['last_name']} — {l['company']} ({s['score']}, tier {s['tier']})")
+        lines.append(f"### {l['first_name']} {l['last_name']}, {l['company']} ({s['score']}, tier {s['tier']})")
         lines += [f"- {reason}" for reason in s["reasons"]] + [""]
     with open(os.path.join(out_dir, "report.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
@@ -86,10 +86,10 @@ def write_outputs(out_dir: str, results: list[dict]) -> None:
                         e["employee_estimate"], e["funding_stage"], ";".join(e["tech_stack"])])
 
     with open(os.path.join(out_dir, "outreach_emails.md"), "w", encoding="utf-8") as f:
-        f.write("# Drafted outreach (SYNTHETIC — review before anything goes anywhere)\n\n")
+        f.write("# Drafted outreach (SYNTHETIC, review before anything goes anywhere)\n\n")
         for r in results:
             l, d, s = r["lead"], r["draft"], r["score"]
-            f.write(f"---\n\n## {l['first_name']} {l['last_name']} — {l['company']} "
+            f.write(f"---\n\n## {l['first_name']} {l['last_name']}, {l['company']} "
                     f"(score {s['score']}, tier {s['tier']})\n\n")
             f.write(f"To: {d['to']}\nSubject: {d['subject']}\n\n{d['body']}\n\n")
             f.write(f"*Drafted by: {d['drafted_by']}*\n\n")

@@ -1,9 +1,9 @@
-"""Stage 2 — Enrichment (SIMULATED).
+"""Stage 2, Enrichment (SIMULATED).
 
 In production this stage calls real enrichment providers (Apollo, Clearbit-style
 APIs) and parses the company website. Here it is a deterministic mock: the same
 lead_id always produces the same enrichment, so the demo is reproducible with
-zero API keys. Every output is labeled simulated — the point of the demo is the
+zero API keys. Every output is labeled simulated, the point of the demo is the
 pipeline architecture and the downstream reasoning, not the data.
 """
 import hashlib
@@ -43,7 +43,7 @@ _PAIN_PHRASES = ["manual", "spreadsheet", "no crm", "memory", "drying up", "stal
 
 
 def _rng(lead_id: str) -> random.Random:
-    """Deterministic RNG seeded from the lead id — reproducible mock data."""
+    """Deterministic RNG seeded from the lead id, reproducible mock data."""
     seed = int(hashlib.sha256(lead_id.encode("utf-8")).hexdigest()[:8], 16)
     return random.Random(seed)
 
@@ -66,7 +66,7 @@ def enrich_lead(lead: dict) -> dict:
     pain_detected = any(p in hook for p in _PAIN_PHRASES)
 
     return {
-        "simulated": True,  # honesty label — always present
+        "simulated": True,  # honesty label, always present
         "employee_estimate": employees,
         "tech_stack": tech_stack,
         "hiring_signals": hiring,

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sam Shershevsky — AI GTM Systems</title>
-<meta name="description" content="I build agentic AI systems for go-to-market teams: lead enrichment, transparent scoring, and personalized outreach — with humans in the loop.">
+<title>Sam Shershevsky: AI GTM Systems</title>
+<meta name="description" content="I build production AI agents for revenue teams. MCP integrations, evals, and pipelines that ship, with a human in the loop on everything that goes out.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -129,6 +129,40 @@ footer h2{margin-bottom:10px}
 footer .lede{margin:0 auto 28px}
 .foot-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .small{font-size:13px;color:var(--muted);margin-top:28px}
+
+/* architecture + evals */
+.arch-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;margin-top:40px}
+.arch-scroll{overflow-x:auto}
+.arch-svg{min-width:660px;width:100%;height:auto;display:block}
+.arch-svg .box{fill:var(--card);stroke:var(--line);stroke-width:1.5}
+.arch-svg .box.accent{fill:var(--accent-soft)}
+.arch-svg .box.gate{fill:var(--accent);stroke:var(--accent-deep)}
+.arch-svg .box.band{fill:var(--paper)}
+.arch-svg .frame{fill:none;stroke:var(--accent);stroke-width:1.5;stroke-dasharray:7 6}
+.arch-svg .t-title{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;fill:var(--ink)}
+.arch-svg .t-title.big{font-size:19px}
+.arch-svg .t-sub{font-family:'Inter',sans-serif;font-size:13px;fill:var(--muted)}
+.arch-svg .t-band{font-family:'Inter',sans-serif;font-weight:700;font-size:14px;fill:var(--accent-deep)}
+.arch-svg .arrow{stroke:var(--accent);stroke-width:2;fill:none;marker-end:url(#ah)}
+.arch-svg .arrowhead{fill:var(--accent)}
+.arch-svg .gate-t{fill:#FFFFFF}
+.arch-note{font-size:15px;color:var(--muted);margin-top:22px;max-width:720px}
+.eval-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.eval-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 20px}
+.eval-card b{display:block;font-family:'Fraunces',serif;font-size:30px;color:var(--accent-deep);margin-bottom:6px}
+.eval-card h3{font-family:'Inter',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;letter-spacing:0}
+.eval-card p{font-size:13.5px;color:var(--muted);line-height:1.55}
+.eval-note{font-size:15px;color:var(--muted);margin-top:26px;max-width:760px}
+@media (prefers-color-scheme: dark){
+  .arch-card{background:#1E1A15;border-color:#3A352C}
+  .arch-svg .box{fill:#1E1A15;stroke:#3A352C}
+  .arch-svg .box.accent{fill:#14332C}
+  .arch-svg .box.band{fill:#14110D}
+  .arch-svg .t-title{fill:#EDE8DE}
+  .arch-svg .t-sub{fill:#B9B2A6}
+  .arch-svg .t-band{fill:#5BC8A9}
+}
+@media(max-width:900px){ .eval-grid{grid-template-columns:1fr 1fr} }
 /* reveal */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .rv.on{opacity:1;transform:none}
@@ -153,41 +187,109 @@ footer .lede{margin:0 auto 28px}
 <nav><div class="wrap nav-in">
   <a class="brand" href="#">Sam Shershevsky <span>·</span> AI GTM Systems</a>
   <div class="nav-links">
-    <a href="#pipeline">Pipeline</a><a href="#scorer">Live scorer</a><a href="#output">Output</a><a href="#story">Story</a>
+    <a href="#architecture">Architecture</a><a href="#pipeline">Pipeline</a><a href="#scorer">Live scorer</a><a href="#output">Output</a><a href="#evals">Evals</a><a href="#story">Story</a>
     <a class="btn" style="padding:9px 18px;font-size:14px" href="https://github.com/samshershevsky/ai-outreach-pipeline" target="_blank" rel="noopener">Code ↗</a>
   </div>
 </div></nav>
 
 <header class="hero"><div class="wrap hero-grid">
   <div class="hero-copy">
-  <h1 class="rv">I build AI systems that <em>do the busywork.</em></h1>
-  <p class="lede rv">GTM engineer &amp; AI transformation. I design agentic pipelines for prospecting, enrichment, and outreach — explainable, human-in-the-loop, and already running in production.</p>
+  <h1 class="rv">I build production AI agents for revenue teams.</h1>
+  <p class="lede rv">MCP integrations, evals, and pipelines that ship, with a human in the loop on everything that goes out.</p>
   <div class="cta-row rv">
     <a class="btn" href="#scorer">Try the live lead scorer ↓</a>
     <a class="btn ghost" href="https://github.com/samshershevsky/ai-outreach-pipeline" target="_blank" rel="noopener">Read the code ↗</a>
+    <a class="btn ghost" href="resume.pdf" download>Download Resume</a>
   </div>
   <div class="proof rv">
-    <div><b>12-agent</b><span>AI system live in production (Claude Enterprise + Apollo + HubSpot + Gmail)</span></div>
-    <div><b>−50%</b><span>manual prospecting work after a 30-day ramp</span></div>
-    <div><b>#1 · 165%</b><span>on the team — quota attainment, current role</span></div>
+    <div><b>12 agents</b><span>in production</span></div>
+    <div><b>3,000+</b><span>contacts enriched and scored monthly</span></div>
+    <div><b>12 hrs</b><span>saved per rep, per week</span></div>
   </div>
   </div>
   <div class="portrait rv"><img src="profile.jpg" alt="Sam Shershevsky"></div>
 </div></header>
 
+<section id="architecture" style="padding-top:20px"><div class="wrap">
+  <div class="eyebrow rv">Architecture</div>
+  <h2 class="rv">How the system fits together.</h2>
+  <p class="lede rv">One orchestrator agent on Claude coordinates six specialized sub agents. The sub agents never touch tools directly: every call goes through a custom MCP server, and every draft waits for a human before anything is sent.</p>
+  <div class="arch-card rv"><div class="arch-scroll">
+<svg class="arch-svg" viewBox="0 0 820 1080" role="img" aria-label="Architecture diagram: an orchestrator agent on Claude coordinates six specialized sub agents. The sub agents call a custom MCP server named gtm-pipeline-mcp, which connects to Clay, Apollo, HubSpot, Google Workspace, and internal REST and GraphQL APIs. Drafts wait in a queue for human approval before anything is sent, and an evals and monitoring layer watches every run." xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrowhead"/></marker></defs>
+  <rect class="frame" x="8" y="8" width="804" height="1064" rx="20"/>
+  <text class="t-band" x="28" y="38">Evals and monitoring layer: watches every agent run</text>
+  <g>
+    <rect class="box accent" x="210" y="56" width="400" height="76" rx="12"/>
+    <text class="t-title big" x="410" y="90" text-anchor="middle">Orchestrator agent</text>
+    <text class="t-sub" x="410" y="114" text-anchor="middle">Runs on Claude. Plans, routes, and checks output.</text>
+  </g>
+  <path class="arrow" d="M410 132 L410 168"/>
+  <text class="t-sub" x="410" y="162" text-anchor="middle">coordinates six specialized sub agents</text>
+    <g><rect class="box" x="28" y="176" width="244" height="64" rx="12"/><text class="t-title" x="150" y="204" text-anchor="middle">Prospecting</text><text class="t-sub" x="150" y="226" text-anchor="middle">finds target accounts</text></g>
+    <g><rect class="box" x="288" y="176" width="244" height="64" rx="12"/><text class="t-title" x="410" y="204" text-anchor="middle">Enrichment</text><text class="t-sub" x="410" y="226" text-anchor="middle">firmographics and signals</text></g>
+    <g><rect class="box" x="548" y="176" width="244" height="64" rx="12"/><text class="t-title" x="670" y="204" text-anchor="middle">Scoring</text><text class="t-sub" x="670" y="226" text-anchor="middle">rubric score with reasons</text></g>
+    <g><rect class="box" x="28" y="256" width="244" height="64" rx="12"/><text class="t-title" x="150" y="284" text-anchor="middle">Drafting</text><text class="t-sub" x="150" y="306" text-anchor="middle">writes the first touch</text></g>
+    <g><rect class="box" x="288" y="256" width="244" height="64" rx="12"/><text class="t-title" x="410" y="284" text-anchor="middle">CRM hygiene</text><text class="t-sub" x="410" y="306" text-anchor="middle">dedupe and cleanup</text></g>
+    <g><rect class="box" x="548" y="256" width="244" height="64" rx="12"/><text class="t-title" x="670" y="284" text-anchor="middle">Reporting</text><text class="t-sub" x="670" y="306" text-anchor="middle">digest of every run</text></g>
+  <path class="arrow" d="M410 336 L410 368"/>
+  <g>
+    <rect class="box accent" x="28" y="372" width="764" height="72" rx="12"/>
+    <text class="t-title big" x="410" y="404" text-anchor="middle">Custom MCP server: gtm-pipeline-mcp</text>
+    <text class="t-sub" x="410" y="428" text-anchor="middle">The one controlled doorway between the agents and the tools</text>
+  </g>
+  <path class="arrow" d="M410 444 L410 476"/>
+  <text class="t-sub" x="410" y="470" text-anchor="middle">tools the server can call</text>
+    <g><rect class="box" x="28" y="482" width="244" height="64" rx="12"/><text class="t-title" x="150" y="510" text-anchor="middle">Clay</text><text class="t-sub" x="150" y="532" text-anchor="middle">enrichment waterfalls</text></g>
+    <g><rect class="box" x="288" y="482" width="244" height="64" rx="12"/><text class="t-title" x="410" y="510" text-anchor="middle">Apollo</text><text class="t-sub" x="410" y="532" text-anchor="middle">prospect data</text></g>
+    <g><rect class="box" x="548" y="482" width="244" height="64" rx="12"/><text class="t-title" x="670" y="510" text-anchor="middle">HubSpot</text><text class="t-sub" x="670" y="532" text-anchor="middle">CRM of record</text></g>
+    <g><rect class="box" x="28" y="562" width="244" height="64" rx="12"/><text class="t-title" x="150" y="590" text-anchor="middle">Google Workspace</text><text class="t-sub" x="150" y="612" text-anchor="middle">mail and calendar</text></g>
+    <g><rect class="box" x="288" y="562" width="244" height="64" rx="12"/><text class="t-title" x="410" y="590" text-anchor="middle">Internal REST APIs</text><text class="t-sub" x="410" y="612" text-anchor="middle">account data</text></g>
+    <g><rect class="box" x="548" y="562" width="244" height="64" rx="12"/><text class="t-title" x="670" y="590" text-anchor="middle">Internal GraphQL APIs</text><text class="t-sub" x="670" y="612" text-anchor="middle">product data</text></g>
+  <path class="arrow" d="M410 642 L410 678"/>
+  <g>
+    <rect class="box" x="210" y="682" width="400" height="64" rx="12"/>
+    <text class="t-title" x="410" y="710" text-anchor="middle">Drafts queue</text>
+    <text class="t-sub" x="410" y="732" text-anchor="middle">Every draft waits here first</text>
+  </g>
+  <path class="arrow" d="M410 746 L410 782"/>
+  <g>
+    <rect class="box gate" x="210" y="786" width="400" height="76" rx="12"/>
+    <text class="t-title big gate-t" x="410" y="820" text-anchor="middle">Human approval</text>
+    <text class="t-sub gate-t" x="410" y="844" text-anchor="middle">A person approves every send. Nothing skips this step.</text>
+  </g>
+  <path class="arrow" d="M410 862 L410 898"/>
+  <g>
+    <rect class="box" x="210" y="902" width="400" height="64" rx="12"/>
+    <text class="t-title" x="410" y="930" text-anchor="middle">Send</text>
+    <text class="t-sub" x="410" y="952" text-anchor="middle">Only approved drafts go out</text>
+  </g>
+  <g>
+    <rect class="box band" x="28" y="992" width="764" height="56" rx="12"/>
+    <text class="t-title" x="410" y="1027" text-anchor="middle">Monitoring watches: failed tool calls, latency spikes, low confidence scores</text>
+  </g>
+</svg>
+  </div></div>
+  <p class="arch-note rv">The middle layer is a custom MCP server named <b>gtm-pipeline-mcp</b>. A sanitized demo of it ships in this repo with four tools, enrich_lead, score_lead, draft_outreach, and get_report, running on the same synthetic leads as the pipeline below.</p>
+  <div class="cta-row rv" style="margin-top:18px">
+    <a class="btn ghost" href="https://github.com/samshershevsky/ai-outreach-pipeline/tree/main/mcp-server" target="_blank" rel="noopener">See the MCP server code ↗</a>
+  </div>
+</div></section>
+
+
 <section id="pipeline"><div class="wrap">
   <div class="eyebrow rv">The demo</div>
   <h2 class="rv">Leads in. Drafts out. Nothing sent without a human.</h2>
-  <p class="lede rv">A working, end-to-end outreach pipeline. A CSV of leads goes in — enrichment, transparent scoring, and signal-aware outreach drafts come out. It stops at drafts on purpose: approve-and-send is a feature, not a missing piece.</p>
+  <p class="lede rv">A working outreach pipeline, end to end. A CSV of leads goes in, and enrichment, transparent scoring, and signal aware outreach drafts come out. It stops at drafts on purpose: approve and send is a feature, not a missing piece.</p>
   <div class="stages">
     <div class="stage rv"><div class="n">01</div><h3>Ingest &amp; validate</h3><p>25 leads loaded from CSV, deduped and normalized.</p></div>
-    <div class="stage rv"><div class="n">02</div><h3>Enrich</h3><p>Headcount, tech stack, hiring &amp; intent signals. Simulated here — real APIs in production.</p></div>
-    <div class="stage rv"><div class="n">03</div><h3>Score</h3><p>0–100 ICP fit, tiers A/B/C. Every point has a reason string — fully auditable.</p></div>
+    <div class="stage rv"><div class="n">02</div><h3>Enrich</h3><p>Headcount, tech stack, hiring and intent signals. Simulated here. Real APIs run in production.</p></div>
+    <div class="stage rv"><div class="n">03</div><h3>Score</h3><p>ICP fit from 0 to 100, tiers A, B, and C. Every point has a reason string, fully auditable.</p></div>
     <div class="stage rv"><div class="n">04</div><h3>Draft</h3><p>Personalized openers keyed to each lead's signals. Template engine, or Claude via API.</p></div>
-    <div class="stage rv"><div class="n">05</div><h3>Report</h3><p>Tier distribution, ranked leads, scoring reasons, all drafts — ready for review.</p></div>
+    <div class="stage rv"><div class="n">05</div><h3>Report</h3><p>Tier distribution, ranked leads, scoring reasons, all drafts, ready for review.</p></div>
   </div>
   <div class="term rv" id="term">
-    <div class="term-bar"><span class="dot" style="background:#E0604F"></span><span class="dot" style="background:#E5A54B"></span><span class="dot" style="background:#5BC8A9"></span><span class="term-title">sam — bash demo/run.sh</span></div>
+    <div class="term-bar"><span class="dot" style="background:#E0604F"></span><span class="dot" style="background:#E5A54B"></span><span class="dot" style="background:#5BC8A9"></span><span class="term-title">sam: bash demo/run.sh</span></div>
     <div class="term-body" id="term-body"></div>
   </div>
 </div></section>
@@ -195,7 +297,7 @@ footer .lede{margin:0 auto 28px}
 <section id="scorer" style="padding-top:20px"><div class="wrap">
   <div class="eyebrow rv">Interactive</div>
   <h2 class="rv">Score a lead yourself.</h2>
-  <p class="lede rv">This is the exact rubric from the pipeline — same code, same weights, running in your browser. Change the inputs and watch the score, tier, and every reason update.</p>
+  <p class="lede rv">This is the exact rubric from the pipeline, same code, same weights, running in your browser. Change the inputs and watch the score, tier, and every reason update.</p>
   <div class="scorer rv">
     <div class="scorer-inputs">
       <div class="field"><label>Job title</label>
@@ -206,7 +308,7 @@ footer .lede{margin:0 auto 28px}
           <option>Head of Growth</option><option>Head of Sales</option>
           <option>Sales Manager</option><option>Sales Development Rep</option>
         </select></div>
-      <div class="field"><label>Company size — <span class="range-val" id="emp-val">600 employees</span></label>
+      <div class="field"><label>Company size, <span class="range-val" id="emp-val">600 employees</span></label>
         <input type="range" id="in-emp" min="10" max="6000" step="10" value="600"></div>
       <div class="field"><label>Industry</label>
         <select id="in-ind">
@@ -227,9 +329,9 @@ footer .lede{margin:0 auto 28px}
     <div class="scorer-out">
       <div class="eyebrow">Live score</div>
       <div class="score-num" id="out-score">84</div>
-      <div><span class="tier A" id="out-tier">Tier A — reach out</span></div>
+      <div><span class="tier A" id="out-tier">Tier A, reach out</span></div>
       <ul class="reasons" id="out-reasons"></ul>
-      <p class="scorer-note">Same rubric as <span style="font-family:'JetBrains Mono',monospace">demo/scoring.py</span> — title seniority, size sweet spot, industry fit, up to 3 hiring signals, pain bonus. Capped at 100.</p>
+      <p class="scorer-note">Same rubric as <span style="font-family:'JetBrains Mono',monospace">demo/scoring.py</span>, title seniority, size sweet spot, industry fit, up to 3 hiring signals, pain bonus. Capped at 100.</p>
     </div>
   </div>
 </div></section>
@@ -237,7 +339,7 @@ footer .lede{margin:0 auto 28px}
 <section id="output" style="padding-top:20px"><div class="wrap">
   <div class="eyebrow rv">Real output</div>
   <h2 class="rv">What the pipeline actually produced.</h2>
-  <p class="lede rv">Straight from the last run — 25 synthetic leads scored and ranked, then drafted. These are the top of the pile.</p>
+  <p class="lede rv">Straight from the last run: 25 synthetic leads scored and ranked, then drafted. These are the top of the pile.</p>
   <table class="sample-table rv">
     <thead><tr><th>Score</th><th>Tier</th><th>Name</th><th>Title</th><th>Company</th></tr></thead>
     <tbody>
@@ -253,52 +355,69 @@ footer .lede{margin:0 auto 28px}
   </table>
   <div class="emails">
     <div class="email rv">
-      <div class="email-head"><div class="subj">David — Migrating to HubSpot this quarter</div><div class="meta">To: david.okafor@quantiahealth.com · score 74, tier B</div></div>
+      <div class="email-head"><div class="subj">David: Migrating to HubSpot this quarter</div><div class="meta">To: david.okafor@quantiahealth.com (synthetic) · score 74, tier B</div></div>
       <div class="email-body">
         <p>Hi David,</p>
-        <p>Saw Quantia Health is migrating to HubSpot this quarter — migrations are exactly when teams rethink the manual workarounds they've been tolerating.</p>
-        <p>I help revenue leaders replace the manual prospecting busywork with AI-assisted workflows — most teams get about half that time back.</p>
-        <p>Worth a quick look at what that could look like for Quantia Health?</p>
+        <p>Saw Quantia Health is migrating to HubSpot this quarter. A CRM move is the one moment when the old workarounds are already up for discussion, which makes it the right time to fix how leads enter the system in the first place.</p>
+        <p>That is the layer I build for revenue teams: enrichment and scoring that land inside the new CRM from day one, plus first drafts written from each account's own signals. Instead of migrating old habits into a new tool, your team starts with a ranked queue and the research already done. For Quantia Health, the first pass keys off CRM migration, with HubSpot already in the stack.</p>
+        <p>Open to a short walkthrough of how that layer would sit on Quantia Health's setup?</p>
         <p>Best,<br>Sam Shershevsky</p>
-        <div class="email-sign">DRAFT — written by the pipeline, sent by no one. Human review required.</div>
+        <div class="email-sign">DRAFT, written by the pipeline, sent by no one. Human review required.</div>
       </div>
     </div>
     <div class="email rv">
-      <div class="email-head"><div class="subj">Priya — Just opened a second office</div><div class="meta">To: priya.nair@vantagewell.com · score 74, tier B</div></div>
+      <div class="email-head"><div class="subj">Priya: Just opened a second office</div><div class="meta">To: priya.nair@vantagewell.com (synthetic) · score 74, tier B</div></div>
       <div class="email-body">
         <p>Hi Priya,</p>
-        <p>Saw that Vantagewell is hiring a sales manager — usually a sign the team is about to feel the pain of manual prospecting.</p>
-        <p>I help revenue leaders replace the manual prospecting busywork with AI-assisted workflows — most teams get about half that time back.</p>
-        <p>Worth a quick look at what that could look like for Vantagewell?</p>
+        <p>Noticed this at Vantagewell: just opened a second office. Growth like that quietly widens the prospecting surface: new territory, new accounts, and a playbook that suddenly has to travel to people who did not build it.</p>
+        <p>I set up agent pipelines that give an expanding team one shared system for finding, enriching, and scoring accounts, with drafts grounded in what is actually happening at each company. The new ground gets consistent coverage without the original team cloning its habits by hand. For Vantagewell, the first pass keys off outbound prospecting, with HubSpot already in the stack.</p>
+        <p>Would it help to see what that coverage could look like for Vantagewell this quarter?</p>
         <p>Best,<br>Sam Shershevsky</p>
-        <div class="email-sign">DRAFT — written by the pipeline, sent by no one. Human review required.</div>
+        <div class="email-sign">DRAFT, written by the pipeline, sent by no one. Human review required.</div>
       </div>
     </div>
   </div>
-  <p class="honest rv">Honest framing: the 25 leads are synthetic (fictional people and companies), and enrichment is a deterministic simulation. In production, stages 2 and 4 call real APIs. The architecture, scoring rubric, and prompt design are the real thing — that's what this page is showing.</p>
+  <p class="honest rv">Honest framing: the 25 leads are synthetic (fictional people and companies), and enrichment is a deterministic simulation. In production, stages 2 and 4 call real APIs. The architecture, scoring rubric, and prompt design are the real thing. That is what this page is showing.</p>
+</div></section>
+
+
+<section id="evals" style="padding-top:20px"><div class="wrap">
+  <div class="eyebrow rv">Evals and Monitoring</div>
+  <h2 class="rv">Every run is checked, not trusted.</h2>
+  <p class="lede rv">The eval script in this repo runs against all 25 synthetic leads and verifies the pipeline before anyone believes its output. These are the actual results from the latest run, also saved in the repo as evals/results.json. The same evals run in CI on every push.</p>
+  <div class="eval-grid">
+    <div class="eval-card rv"><b id="ev-consistency">25 of 25</b><h3>Scoring consistency</h3><p>Leads that scored identically across 5 repeated runs each.</p></div>
+    <div class="eval-card rv"><b id="ev-rubric">25 of 25</b><h3>Rubric correctness</h3><p>Scores that match an independent recomputation of the rubric math, with a reason string for every point.</p></div>
+    <div class="eval-card rv"><b id="ev-grounding">25 of 25</b><h3>Draft grounding</h3><p>Drafts that reference at least one real signal from their own lead and invent no facts.</p></div>
+    <div class="eval-card rv"><b id="ev-toolrate">100%</b><h3>Tool call success</h3><p>Across <span id="ev-toolcalls">75</span> tool calls in the eval run. Mean latency <span id="ev-latency">0.013 ms</span>, p95 <span id="ev-p95">0.028 ms</span>, measured locally.</p></div>
+  </div>
+  <p class="eval-note rv">In production, monitoring watches the same failure modes the evals check for: failed tool calls, latency spikes on any agent step, and low confidence scores that suggest a lead was scored on thin data. An alert fires when any of those move, and a human reviews the flagged runs before the next batch of drafts is approved. Nothing sends while a check is red.</p>
+  <div class="cta-row rv" style="margin-top:18px">
+    <a class="btn ghost" href="https://github.com/samshershevsky/ai-outreach-pipeline/blob/main/evals/results.json" target="_blank" rel="noopener">Read results.json ↗</a>
+    <a class="btn ghost" href="https://github.com/samshershevsky/ai-outreach-pipeline/blob/main/evals/run_evals.py" target="_blank" rel="noopener">Read the eval script ↗</a>
+  </div>
 </div></section>
 
 <section id="story" style="padding-top:20px"><div class="wrap">
   <div class="case rv">
     <div class="eyebrow">Production story</div>
-    <h2>Not a toy project — this thinking already runs a sales org.</h2>
-    <p>At my current role I built a 12-agent AI system on Claude Enterprise, wired into Apollo, HubSpot, Gmail, and Calendar via MCP — prospecting, lead scoring, CRM hygiene, and outreach drafting. The demo above is the portable version of how I think.</p>
+    <h2>Not a toy project. This thinking already runs a sales org.</h2>
+    <p>In my current role I run a 12 agent AI system on Claude, wired into Clay, Apollo, HubSpot, and Google Workspace through a custom MCP server: prospecting, enrichment, lead scoring, CRM hygiene, and outreach drafting, with a person approving every send. The demo above is the portable version of how I think.</p>
     <div class="case-stats">
-      <div><b>−50%</b><span>manual prospecting &amp; CRM work</span></div>
-      <div><b>150%</b><span>of monthly target after a 30-day ramp</span></div>
-      <div><b>$1.5M+</b><span>closed selling Oracle cloud solutions</span></div>
+      <div><b>12</b><span>agents in production</span></div>
+      <div><b>3,000+</b><span>contacts enriched and scored monthly</span></div>
+      <div><b>12 hrs</b><span>saved per rep, per week</span></div>
     </div>
   </div>
   <div class="principles">
     <div class="prin rv"><div class="ico">🔍</div><h3>Explainable scoring</h3><p>Every point has a reason string. A human or a reviewer agent can audit why a lead is Tier A. Black-box scores don't survive contact with a sales team.</p></div>
-    <div class="prin rv"><div class="ico">📝</div><h3>Prompts as code review</h3><p>Outreach prompts live in versioned files, not buried in logic — reviewable, diffable, improvable like any other code.</p></div>
+    <div class="prin rv"><div class="ico">📝</div><h3>Prompts as code review</h3><p>Outreach prompts live in versioned files, not buried in logic. Reviewable, diffable, improvable like any other code.</p></div>
     <div class="prin rv"><div class="ico">🤝</div><h3>Human-in-the-loop</h3><p>The pipeline ends at drafts, not sends. Approval gates are a design choice: AI does the research and writing, humans make the calls.</p></div>
   </div>
 </div></section>
 
 <footer><div class="wrap">
-  <h2 class="rv">Let's talk about what AI can do for your pipeline.</h2>
-  <p class="lede rv">Open to GTM engineer and AI transformation roles — remote US, or hybrid in Miami / Fort Lauderdale / Boca.</p>
+  <h2 class="rv">Open to GTM Engineer and Forward Deployed Engineer roles. Based in Miami, relocating to New York City, also open to remote.</h2>
   <div class="foot-links rv">
     <a class="btn" href="https://github.com/samshershevsky/ai-outreach-pipeline" target="_blank" rel="noopener">GitHub ↗</a>
     <a class="btn ghost" href="https://linkedin.com/in/samshershevsky" target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -307,22 +426,22 @@ footer .lede{margin:0 auto 28px}
   <p class="small">Built by Sam Shershevsky · Demo runs on synthetic data · The thinking is real.</p>
 </div></footer>
 <script>
-// ---------- scroll reveal ----------
+// scroll reveal
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), {threshold: 0.12});
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
-// ---------- terminal: real output from bash demo/run.sh ----------
+// terminal: real output captured from bash demo/run.sh (demo/output/run.log)
 const termLines = [
   ['t-dim',  '$ bash demo/run.sh'],
   ['t-white','[1/5] Ingest & validate…'],
-  ['t-dim',  '      25 synthetic leads loaded from data/leads.csv'],
+  ['t-dim','      25 synthetic leads loaded from data/leads.csv'],
   ['t-white','[2/5] Enrich (SIMULATED)…'],
   ['t-white','[3/5] Score…'],
   ['t-green','      scored 25 leads → A:4 B:14 C:7'],
   ['t-white','[4/5] Draft personalized outreach…'],
-  ['t-dim',  '      25 drafts written (approve-and-send: nothing sent)'],
+  ['t-dim','      25 drafts written (approve-and-send: nothing sent)'],
   ['t-white','[5/5] Write report…'],
-  ['t-dim',  '      → output/report.md, scored_leads.csv, outreach_emails.md'],
+  ['t-green','      → output/report.md, scored_leads.csv, outreach_emails.md'],
   ['t-amber','Done.'],
 ];
 const termBody = document.getElementById('term-body');
@@ -344,7 +463,7 @@ new IntersectionObserver((es, obs) => {
   }
 }, {threshold: 0.3}).observe(document.getElementById('term'));
 
-// ---------- interactive scorer: exact mirror of demo/scoring.py ----------
+// interactive scorer: exact mirror of demo/scoring.py
 const HIGH_FIT = new Set(['SaaS','Fintech','Healthcare','Analytics','Edtech']);
 const TITLE_TIERS = [
   [['chief','cfo','cro','ceo','president','founder','owner'], 30],
@@ -371,14 +490,14 @@ function score() {
   else                              { s += 5;  reasons.push([`Company size ~${emp.toLocaleString()} employees (outside sweet spot): +5`, 5]); }
   if (HIGH_FIT.has(ind)) { s += 15; reasons.push([`Industry '${ind}' is high-fit: +15`, 15]); }
   else                   { s += 8;  reasons.push([`Industry '${ind}': +8`, 8]); }
-  sigs.slice(0, 3).forEach(sig => { s += 7; reasons.push([`Buying signal — ${sig}: +7`, 7]); });
+  sigs.slice(0, 3).forEach(sig => { s += 7; reasons.push([`Buying signal, ${sig}: +7`, 7]); });
   if (pain) { s += 10; reasons.push(['Pain signal in research (manual process): +10', 10]); }
   s = Math.min(s, 100);
   const tier = s >= 75 ? 'A' : s >= 55 ? 'B' : 'C';
   document.getElementById('out-score').textContent = s;
   const tierEl = document.getElementById('out-tier');
   tierEl.className = 'tier ' + tier;
-  tierEl.textContent = tier === 'A' ? 'Tier A — reach out' : tier === 'B' ? 'Tier B — nurture' : 'Tier C — deprioritize';
+  tierEl.textContent = tier === 'A' ? 'Tier A: reach out' : tier === 'B' ? 'Tier B: nurture' : 'Tier C: deprioritize';
   document.getElementById('out-reasons').innerHTML =
     reasons.map(([r, p]) => `<li>${r.replace(/\+\d+$/, m => `<b>${m}</b>`)}</li>`).join('');
   document.getElementById('emp-val').textContent = emp.toLocaleString() + ' employees';
@@ -387,6 +506,22 @@ function score() {
   document.getElementById(id).addEventListener('input', score));
 document.querySelectorAll('#in-sigs input').forEach(c => c.addEventListener('change', score));
 score();
+</script>
+
+<script>
+// evals: refresh the displayed numbers from the same results.json the repo ships
+fetch('evals-results.json').then(r => r.ok ? r.json() : null).then(d => {
+  if (!d) return;
+  const c = d.checks;
+  const set = (id, txt) => { const el = document.getElementById(id); if (el) el.textContent = txt; };
+  set('ev-consistency', c.scoring_consistency.stable_leads + ' of ' + c.scoring_consistency.leads_checked);
+  set('ev-rubric', c.rubric_correctness.scores_matching_rubric + ' of ' + c.rubric_correctness.leads_checked);
+  set('ev-grounding', c.draft_grounding.drafts_grounded + ' of ' + c.draft_grounding.drafts_checked);
+  set('ev-toolrate', c.tool_calls.success_rate_pct + '%');
+  set('ev-toolcalls', c.tool_calls.tool_calls);
+  set('ev-latency', c.tool_calls.mean_latency_ms + ' ms');
+  set('ev-p95', c.tool_calls.p95_latency_ms + ' ms');
+}).catch(() => {});
 </script>
 </body>
 </html>

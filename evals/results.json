@@ -1,0 +1,35 @@
+{
+  "generated_on": "2026-10-26",
+  "dataset": "demo/data/leads.csv (25 synthetic leads)",
+  "engine": "template engine, deterministic, no API calls",
+  "checks": {
+    "scoring_consistency": {
+      "leads_checked": 25,
+      "runs_per_lead": 5,
+      "stable_leads": 25,
+      "passed": true
+    },
+    "rubric_correctness": {
+      "leads_checked": 25,
+      "scores_matching_rubric": 25,
+      "leads_with_full_reason_strings": 25,
+      "passed": true
+    },
+    "draft_grounding": {
+      "drafts_checked": 25,
+      "drafts_grounded": 25,
+      "failures": [],
+      "passed": true
+    },
+    "tool_calls": {
+      "tool_calls": 75,
+      "failed_calls": 0,
+      "success_rate_pct": 100.0,
+      "mean_latency_ms": 0.013,
+      "p95_latency_ms": 0.028,
+      "max_latency_ms": 0.078,
+      "passed": true
+    }
+  },
+  "all_passed": true
+}
